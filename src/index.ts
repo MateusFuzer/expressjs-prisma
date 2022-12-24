@@ -11,17 +11,16 @@ app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
 
 app.get("/todos", async (req, res) => {
-  const todos = await prisma.todo.findMany();
+  const todos = await prisma.cliente.findMany();
 
   res.json(todos);
 });
 
 app.post("/todos", async (req, res) => {
-  const todo = await prisma.todo.create({
+  const { name } = req.body;
+  const todo = await prisma.cliente.create({
     data: {
-      completed: false,
-      createdAt: new Date(),
-      text: "Teste",
+      name
     },
   });
 

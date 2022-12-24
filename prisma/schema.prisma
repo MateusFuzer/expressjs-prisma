@@ -10,7 +10,8 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Todo {
+
+model cliente {
   id        String   @id @default(uuid())
-  name String
+  name      String
 }
