@@ -40,6 +40,12 @@ app.get("/", async (req, res) => {
   );
 });
 
+app.get('/busca/informacao/cliente', async (req, res) => {
+  
+  res.send('teste')
+
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
